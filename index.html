@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المستشار الرقمي - Almustashar Digital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom Arabic font -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #134c93 0%, #3699d6 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Background pattern */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="white" stroke-width="2"/><circle cx="50" cy="50" r="15" fill="none" stroke="white" stroke-width="2"/></svg>');
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 2.5rem;
+            box-shadow: 0 30px 60px -15px rgba(19, 76, 147, 0.5);
+            max-width: 420px;
+            width: 100%;
+            padding: 2.2rem;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 35px 70px -15px #134c93;
+        }
+
+        /* Logo Container */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .logo-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(145deg, #ffffff, #ffffff);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 15px 25px -8px rgba(237, 119, 27, 0.4);
+            border: 3px solid white;
+        }
+        
+        .logo-icon:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        
+        .logo-icon i {
+            font-size: 3.5rem;
+            color: white;
+            transform: rotate(-5deg);
+        }
+        
+        .logo-icon:hover i {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-text {
+            text-align: center;
+        }
+        
+        .logo-text-ar {
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #134c93, #3699d6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 4px rgba(19, 76, 147, 0.1);
+        }
+        
+        .logo-text-en {
+            font-size: 1rem;
+            color: #f48520;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 0.2rem;
+        }
+        
+        .divider {
+            height: 4px;
+            width: 80px;
+            background: linear-gradient(to left, #f48520, #ED771B);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .phone-number {
+            direction: ltr;
+            display: inline-block;
+            background: linear-gradient(145deg, #134c93, #3699d6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .info-card {
+            background: linear-gradient(145deg, #f8faff, #f0f4fd);
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-right: 6px solid #f48520;
+            box-shadow: 0 8px 15px -6px rgba(19, 76, 147, 0.2);
+        }
+
+        .social-icon {
+            width: 3.2rem;
+            height: 3.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            background: white;
+            box-shadow: 0 8px 15px -6px rgba(19, 76, 147, 0.2);
+            transition: all 0.3s ease;
+            color: #134c93;
+            border: 1px solid rgba(19, 76, 147, 0.1);
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1) translateY(-3px);
+            background: #f48520;
+            color: white;
+            border-color: #f48520;
+            box-shadow: 0 15px 20px -8px #f48520;
+        }
+
+        .social-icon:hover i {
+            color: white;
+        }
+
+        .social-label {
+            color: #134c93;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover + .social-label {
+            color: #f48520;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(145deg, #f48520, #ED771B);
+            color: white;
+            padding: 1rem 1.8rem;
+            border-radius: 3rem;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 25px -8px #f48520;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(145deg, #ED771B, #f48520);
+            transform: scale(1.03);
+            box-shadow: 0 20px 30px -8px #ED771B;
+            border-color: white;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            color: #134c93;
+            text-align: center;
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 2px dashed rgba(19, 76, 147, 0.2);
+            font-weight: 600;
+        }
+
+        /* Floating button */
+        .floating-call {
+            background: linear-gradient(145deg, #f48520, #ED771B);
+            color: white;
+            box-shadow: 0 15px 25px -8px #f48520;
+            transition: all 0.3s ease;
+        }
+
+        .floating-call:hover {
+            transform: scale(1.1) rotate(5deg);
+            background: #ED771B;
+        }
+
+        /* Location text */
+        .location-text {
+            color: #134c93;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .location-icon {
+            color: #f48520;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Logo Section with new design -->
+        <div class="logo-container">
+            <div class="logo-icon">
+                <img src="./logo/logo.png.png" >
+            </div>
+            <div class="logo-text">
+                <div class="logo-text-ar">المستشار الرقمي</div>
+                <div class="logo-text-en">Almustashar Digital</div>
+            </div>
+            <div class="divider"></div>
+        </div>
+
+        <!-- Contact Info Card -->
+        <div class="info-card">
+            <div class="flex items-center justify-center gap-2 mb-2">
+                <i class="fas fa-map-marker-alt location-icon"></i>
+                <span class="location-text">زاوية الدهماني، خلف المصرف الإسلامي</span>
+            </div>
+            <div class="text-center">
+                <a href="tel:+218935555045" dir="ltr" class="phone-number">
+                    +218 93-5555045
+                </a>
+            </div>
+        </div>
+
+        <!-- Social Media Grid -->
+        <div class="grid grid-cols-3 gap-3 mb-2">
+            <!-- Instagram -->
+            <div class="flex flex-col items-center">
+                <a href="https://www.instagram.com/almustashar.digital?igsh=MXFkOHc5bnR3aTljbg" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <span class="social-label mt-2">إستقرام</span>
+            </div>
+            
+            <!-- LinkedIn -->
+            <div class="flex flex-col items-center">
+                <a href="https://www.linkedin.com/company/almustashar-digital/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <span class="social-label mt-2">لينكد إن</span>
+            </div>
+            
+            <!-- TikTok -->
+            <!-- <div class="flex flex-col items-center">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fab fa-tiktok text-2xl"></i>
+                </a>
+                <span class="social-label mt-2">تيك توك</span>
+            </div> -->
+            
+            <!-- Facebook -->
+            <div class="flex flex-col items-center">
+                <a href="https://www.facebook.com/almustashardigital/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                </a>
+                <span class="social-label mt-2">فيسبوك</span>
+            </div>
+            
+            <!-- WhatsApp -->
+            <div class="flex flex-col items-center">
+                <a href="https://wa.me/218935555045" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+                <span class="social-label mt-2">واتساب مباشر</span>
+            </div>
+            
+            <!-- Website -->
+            <div class="flex flex-col items-center">
+                <a href="https://almustashar-digital.com/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fas fa-globe text-2xl"></i>
+                </a>
+                <span class="social-label mt-2">الموقع الرسمي</span>
+            </div>
+        </div>
+
+        <!-- WhatsApp Direct Button -->
+        <a href="https://wa.me/218935555045" target="_blank" rel="noopener noreferrer" class="whatsapp-btn flex items-center justify-center gap-3 w-full mt-6">
+            <i class="fab fa-whatsapp text-2xl"></i>
+            <span>واتساب مباشر</span>
+        </a>
+
+        <!-- Footer -->
+        <div class="footer-text">
+            Almustashar Digital 2025 ©
+        </div>
+    </div>
+
+    <!-- Floating call button for mobile -->
+    <a href="tel:+218935555045" class="floating-call fixed bottom-6 left-6 p-4 rounded-full shadow-lg md:hidden">
+        <i class="fas fa-phone-alt text-xl"></i>
+    </a>
+</body>
+</html>
