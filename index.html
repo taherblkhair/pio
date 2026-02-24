@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المستشار الرقمي - Almustashar Digital</title>
+     <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./logo/logo.png.png">
+    <link rel="shortcut icon"href="./logo/logo.png.png"type="image/x-icon">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
@@ -68,29 +71,19 @@
         .logo-icon {
             width: 90px;
             height: 90px;
-            background: linear-gradient(145deg, #ffffff, #ffffff);
+            background: linear-gradient(145deg);
             border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-            box-shadow: 0 15px 25px -8px rgba(237, 119, 27, 0.4);
+            box-shadow: 0 15px 25px -8px rgba(19, 76, 147, 0.4);
             border: 3px solid white;
-        }
-        
-        .logo-icon:hover {
-            transform: rotate(0deg) scale(1.05);
         }
         
         .logo-icon i {
             font-size: 3.5rem;
             color: white;
-            transform: rotate(-5deg);
-        }
-        
-        .logo-icon:hover i {
-            transform: rotate(0deg);
-            transition: transform 0.3s ease;
         }
         
         .logo-text {
@@ -126,6 +119,15 @@
             border-radius: 2px;
         }
 
+        .info-card {
+            background: linear-gradient(145deg, #f8faff, #f0f4fd);
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-right: 6px solid #f48520;
+            box-shadow: 0 8px 15px -6px rgba(19, 76, 147, 0.2);
+        }
+
         .phone-number {
             direction: ltr;
             display: inline-block;
@@ -138,69 +140,104 @@
             letter-spacing: 1px;
         }
 
-        .info-card {
-            background: linear-gradient(145deg, #f8faff, #f0f4fd);
-            border-radius: 1.5rem;
-            padding: 1.2rem;
-            margin: 1.5rem 0;
-            border-right: 6px solid #f48520;
-            box-shadow: 0 8px 15px -6px rgba(19, 76, 147, 0.2);
-        }
-
-        .social-icon {
-            width: 3.2rem;
-            height: 3.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 1rem;
-            background: white;
-            box-shadow: 0 8px 15px -6px rgba(19, 76, 147, 0.2);
-            transition: all 0.3s ease;
-            color: #134c93;
-            border: 1px solid rgba(19, 76, 147, 0.1);
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1) translateY(-3px);
-            background: #f48520;
-            color: white;
-            border-color: #f48520;
-            box-shadow: 0 15px 20px -8px #f48520;
-        }
-
-        .social-icon:hover i {
-            color: white;
-        }
-
-        .social-label {
+        .location-text {
             color: #134c93;
             font-weight: 600;
-            font-size: 0.8rem;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
         }
 
-        .social-icon:hover + .social-label {
+        .location-icon {
             color: #f48520;
         }
 
-        .whatsapp-btn {
+        /* عناصر القائمة العمودية - التصميم الجديد */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 3rem;
+            box-shadow: 0 5px 15px -5px rgba(19, 76, 147, 0.15);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(19, 76, 147, 0.05);
+            width: 100%;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .menu-item:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 10px 25px -8px rgba(244, 133, 32, 0.3);
+            border-color: #f48520;
+        }
+
+        .menu-item-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .menu-icon {
+            width: 2.8rem;
+            height: 2.8rem;
+            background: linear-gradient(145deg, #134c93, #3699d6);
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover .menu-icon {
             background: linear-gradient(145deg, #f48520, #ED771B);
+            transform: scale(1.05);
+        }
+
+        .menu-text {
+            font-weight: 700;
+            color: #134c93;
+            font-size: 1.1rem;
+        }
+
+        .menu-arrow {
+            color: #f48520;
+            font-size: 1.1rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover .menu-arrow {
+            opacity: 1;
+            transform: translateX(-5px);
+        }
+
+        .map-btn {
+            background: linear-gradient(145deg, #134c93, #3699d6);
             color: white;
             padding: 1rem 1.8rem;
             border-radius: 3rem;
             font-weight: 800;
             font-size: 1.2rem;
             transition: all 0.3s ease;
-            box-shadow: 0 15px 25px -8px #f48520;
+            box-shadow: 0 15px 25px -8px #134c93;
             border: 2px solid rgba(255, 255, 255, 0.3);
             letter-spacing: 0.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
         }
 
-        .whatsapp-btn:hover {
-            background: linear-gradient(145deg, #ED771B, #f48520);
-            transform: scale(1.03);
-            box-shadow: 0 20px 30px -8px #ED771B;
+        .map-btn:hover {
+            background: linear-gradient(145deg, #134c93, #f48520);
+            transform: scale(1.02);
+            box-shadow: 0 20px 30px -8px #134c93;
             border-color: white;
         }
 
@@ -214,7 +251,6 @@
             font-weight: 600;
         }
 
-        /* Floating button */
         .floating-call {
             background: linear-gradient(145deg, #f48520, #ED771B);
             color: white;
@@ -227,24 +263,20 @@
             background: #ED771B;
         }
 
-        /* Location text */
-        .location-text {
-            color: #134c93;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .location-icon {
-            color: #f48520;
+        .social-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- Logo Section with new design -->
+        <!-- Logo Section -->
         <div class="logo-container">
             <div class="logo-icon">
-                <img src="./logo/logo.png.png" >
+                <img src="logo/logo.png.png" >
             </div>
             <div class="logo-text">
                 <div class="logo-text-ar">المستشار الرقمي</div>
@@ -266,66 +298,75 @@
             </div>
         </div>
 
-        <!-- Social Media Grid -->
-        <div class="grid grid-cols-3 gap-3 mb-2">
+        <!-- Vertical Menu Items - Full Width (مثل الصورة تماماً) -->
+        <div class="social-menu">
             <!-- Instagram -->
-            <div class="flex flex-col items-center">
-                <a href="https://www.instagram.com/almustashar.digital?igsh=MXFkOHc5bnR3aTljbg" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <span class="social-label mt-2">إستقرام</span>
-            </div>
+            <a href="https://www.instagram.com/almustashar.digital?igsh=MXFkOHc5bnR3aTljbg" target="_blank" rel="noopener noreferrer" class="menu-item">
+                <div class="menu-item-content">
+                    <div class="menu-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <span class="menu-text">إستقرام</span>
+                </div>
+                <i class="fas fa-chevron-left menu-arrow"></i>
+            </a>
             
             <!-- LinkedIn -->
-            <div class="flex flex-col items-center">
-                <a href="https://www.linkedin.com/company/almustashar-digital/" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <i class="fab fa-linkedin-in text-2xl"></i>
-                </a>
-                <span class="social-label mt-2">لينكد إن</span>
-            </div>
+            <a href="https://www.linkedin.com/company/almustashar-digital/" target="_blank" rel="noopener noreferrer" class="menu-item">
+                <div class="menu-item-content">
+                    <div class="menu-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <span class="menu-text">لينكد إن</span>
+                </div>
+                <i class="fas fa-chevron-left menu-arrow"></i>
+            </a>
             
-            <!-- TikTok -->
-            <!-- <div class="flex flex-col items-center">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <i class="fab fa-tiktok text-2xl"></i>
-                </a>
-                <span class="social-label mt-2">تيك توك</span>
-            </div> -->
+         
             
             <!-- Facebook -->
-            <div class="flex flex-col items-center">
-                <a href="https://www.facebook.com/almustashardigital/" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <i class="fab fa-facebook-f text-2xl"></i>
-                </a>
-                <span class="social-label mt-2">فيسبوك</span>
-            </div>
+            <a href="https://www.facebook.com/almustashardigital/" target="_blank" rel="noopener noreferrer" class="menu-item">
+                <div class="menu-item-content">
+                    <div class="menu-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <span class="menu-text">فيسبوك</span>
+                </div>
+                <i class="fas fa-chevron-left menu-arrow"></i>
+            </a>
             
             <!-- WhatsApp -->
-            <div class="flex flex-col items-center">
-                <a href="https://wa.me/218935555045" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <i class="fab fa-whatsapp text-2xl"></i>
-                </a>
-                <span class="social-label mt-2">واتساب مباشر</span>
-            </div>
+            <a href="https://wa.me/218935555045" target="_blank" rel="noopener noreferrer" class="menu-item">
+                <div class="menu-item-content">
+                    <div class="menu-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <span class="menu-text">واتساب مباشر</span>
+                </div>
+                <i class="fas fa-chevron-left menu-arrow"></i>
+            </a>
             
             <!-- Website -->
-            <div class="flex flex-col items-center">
-                <a href="https://almustashar-digital.com/" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <i class="fas fa-globe text-2xl"></i>
-                </a>
-                <span class="social-label mt-2">الموقع الرسمي</span>
-            </div>
+            <a href="https://almustashar-digital.com/" target="_blank" rel="noopener noreferrer" class="menu-item">
+                <div class="menu-item-content">
+                    <div class="menu-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <span class="menu-text">الموقع الرسمي</span>
+                </div>
+                <i class="fas fa-chevron-left menu-arrow"></i>
+            </a>
         </div>
 
-        <!-- WhatsApp Direct Button -->
-        <a href="https://wa.me/218935555045" target="_blank" rel="noopener noreferrer" class="whatsapp-btn flex items-center justify-center gap-3 w-full mt-6">
-            <i class="fab fa-whatsapp text-2xl"></i>
-            <span>واتساب مباشر</span>
+        <!-- Map Button -->
+        <a href="https://maps.google.com/?q=زاوية+الدهماني+خلف+المصرف+الإسلامي" target="_blank" rel="noopener noreferrer" class="map-btn">
+            <i class="fas fa-map-marked-alt text-2xl"></i>
+            <span>الموقع على الخريطة</span>
         </a>
 
         <!-- Footer -->
         <div class="footer-text">
-            Almustashar Digital 2025 ©
+            Almustashar Digital 2026 ©
         </div>
     </div>
 
